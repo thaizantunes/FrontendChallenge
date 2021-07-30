@@ -1,0 +1,136 @@
+<app-template>
+  <div class="container px-0">
+    <div class="row align-items-center">
+      <section class="col-lg-6">
+        <div class="text-center d-none d-lg-block mt-5">
+          <h1>SUMMONERS RIFT*******</h1>
+          <h1>***SUMMONERS RIFT****</h1>
+          <h1>*****SUMMONERS RIFT**</h1>
+          <h1>*******SUMMONERS RIFT</h1>
+          <h1>*****SUMMONERS RIFT**</h1>
+          <h1>***SUMMONERS RIFT****</h1>
+          <h1>SUMMONERS RIFT*******</h1>
+        </div>
+      </section>
+
+      <section class="col-lg-6">
+        <div class="row justify-content-center align-items-center">
+          <div class="">
+            <div class="card shadow-2-strong card-registration" style="border-radius: 15px">
+              <img
+                src="https://cdna.artstation.com/p/assets/images/images/001/744/110/medium/ewa-labak-9.jpg?1452098672"
+                class="w-100"
+                alt="Sample photo"
+              />
+              <div class="card-body">
+                <h3>Register Team</h3>
+                <form [formGroup]="registerTeamForm">
+                  <div class="row">
+                    <div class="form-outline">
+                      <label class="form-label" for="teamsName">Team's Name</label>
+                      <input
+                        class="form-control form-control-lg"
+                        type="text"
+                        id="teamName"
+                        formControlName="teamsName"
+                      />
+                    </div>
+                  </div>
+                  <div class="mt-1 pt-1">
+                    <input class="btn btn-primary" value="Submit" (click)="addTeamToList()" />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div *ngIf="alertMessage !== ''" class="alert alert-danger" role="alert">{{ alertMessage }}</div>
+
+  <div class="container">
+    <div class="row text-center">
+      <section class="col-2">
+        <h2>Phase 1</h2>
+        <div
+          class="teamCard card align-items-center"
+          *ngFor="let firstPhase of firstPhaseList; index as index"
+        >
+          <button
+            id="removeBtn"
+            type="button"
+            class="btn btn-link"
+            title="Remove Team"
+            (click)="removeTeamFromList(index)"
+          >
+            x
+          </button>
+          <div class="card-body row-one">
+            <button type="button" class="btn btn-dark" (click)="addWinnerPhase1(firstPhase)">
+              {{ firstPhase }}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section *ngIf="secPhaseList" class="col-2">
+        <h2>Phase 2</h2>
+        <div
+          class="teamCard card align-items-center"
+          *ngFor="let secPhase of secPhaseList; index as index"
+        >
+          <div class="card-body">
+            <button type="button" class="btn btn-dark" (click)="addWinnerPhase2(secPhase)">
+              {{ secPhase }}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section *ngIf="thirdPhaseList" class="col-2">
+        <h2>Phase 3</h2>
+        <div
+          class="teamCard card align-items-center"
+          *ngFor="let thirdPhase of thirdPhaseList; index as index"
+        >
+          <div class="card-body">
+            <button type="button" class="btn btn-dark" (click)="addWinnerPhase3(thirdPhase)">
+              {{ thirdPhase }}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section *ngIf="fourthPhaseList" class="col-2">
+        <h2>Phase 4</h2>
+        <div
+          class="teamCard card align-items-center"
+          *ngFor="let fourthPhase of fourthPhaseList; index as index"
+        >
+          <div class="card-body">
+            <button type="button" class="btn btn-dark" (click)="addWinnerPhase4(fourthPhase)">
+              {{ fourthPhase }}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section *ngIf="fifthPhaseList" class="col-2">
+        <h2>Phase 5</h2>
+        <div
+          class="teamCard card align-items-center"
+          *ngFor="let fifthPhase of fifthPhaseList; index as index"
+        >
+          <div class="card-body">
+            <button type="button" class="btn btn-dark">
+              {{ fifthPhase }}
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</app-template>
++

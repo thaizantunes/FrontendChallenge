@@ -1,0 +1,29 @@
+@import '../../../../mediaqueries.scss';
+@import '../../../../comrade-patterns.scss';
+@import 'src/styles.scss';
+
+.fonte-mobile {
+  font-size: 15px;
+}
+
+.navbar-toggler {
+  color: white;
+}
+
+#mainNavbar {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+#mainNavbar .nav-link {
+  color: white;
+}
+
+#mainNavbar .nav-link:hover {
+  color: #ea1c2c;
+}
+
+#mainNavbar .navbar-brand {
+  color: #ea1c2c;
+  font-size: 1.5rem;
+}
